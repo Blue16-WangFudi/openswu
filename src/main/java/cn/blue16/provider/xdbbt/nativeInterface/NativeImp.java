@@ -15,7 +15,7 @@ public class NativeImp {
         Map<String, String> parameters = Map.of("stu_id", stu_id, "password", password);
         try {
             return sendPostRequest_Form(url, parameters, NativeLoginResponse.class);
-        } catch (IOException e) {
+        } catch (Exception e) {
             return new NativeLoginResponse(500,"服务端内部错误",null);
         }
     }
@@ -25,7 +25,7 @@ public class NativeImp {
         Map<String, String> parameters = Map.of("stu_id", stu_id, "session_id", session_id);
         try {
             return sendPostRequest_Form(url, parameters, NativeInfoResponse.class);
-        } catch (IOException e) {
+        } catch (Exception e) {
             return new NativeInfoResponse(500,"服务端内部错误",null);
         }
     }
@@ -34,7 +34,7 @@ public class NativeImp {
         Map<String, String> parameters = Map.of("stu_id", stu_id, "session_id", session_id);
         try {
             return sendPostRequest_Form(url, parameters, NativeScheduleResponse.class);
-        } catch (IOException e) {
+        } catch (Exception e) {
             return new NativeScheduleResponse(500,"服务端内部错误",null);
         }
     }
